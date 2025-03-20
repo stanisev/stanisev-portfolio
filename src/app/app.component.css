@@ -1,78 +1,130 @@
-.container {
+ul, ol {
+  list-style: none;
+}
+
+.nav {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
+  background: hsla(0, 0%, 95%, 0.1);
+  width: 90%;
+  margin-inline: auto;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+  z-index: 999;
+}
+
+.nav__list {
   display: flex;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-.left-panel {
-  width: 30%;
-  padding: 20px;
-}
-
-.right-panel {
-  width: 70%;
-  padding: 20px;
-}
-
-
-.gear-container {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  perspective: 800px;
-  display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
-.gear_1 {
-  position: absolute;
-  width: 65%;
-  height: 65%;
-  background: url('/src/assets/gears/gear_1.svg') no-repeat center center;
-  background-size: contain;
-  transform-origin: center center;
-  transform-style: preserve-3d;
-  right: 100px;
+.nav__link {
+  text-decoration: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.6s;
 }
 
-.gear_2 {
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  background: url('/src/assets/gears/gear_2.svg') no-repeat center center;
-  background-size: contain;
-  transform-origin: center center;
-  transform-style: preserve-3d;
-}
-
-.gear_3 {
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  background: url('/assets/gears/gear_3.svg') no-repeat center center;
-  background-size: contain;
-  transform-origin: center center;
-  transform-style: preserve-3d;
-}
-
-
-.avatar-container {
+.prefill {
   position: relative;
-  width: 300px;
-  height: 300px;
-  perspective: 800px;  /* Enable 3D perspective */
+  height: 600px;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  display: grid;
+  overflow: hidden;
+
+  background: rgb(105,102,79);
+  background: linear-gradient(200deg, rgba(105,102,79,1) 17%, rgba(0,0,0,1) 100%);
+}
+
+.prefill__img {
+  position: absolute;
+  width: 390px;
+  justify-self: center;
+  align-self: flex-end;
+}
+
+.prefill_data {
+  align-self: flex-end;
+  background-color: hsla(0, 0%, 1%, .1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 1.5rem 1rem;
+  border-radius: 1.5rem;
+}
+
+.prefill_name {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.prefill_buttons {
+  display: grid;
+  column-gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.prefill_buttons .button {
+  padding: .75rem 0;
+}
+
+.button {
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  background-color: dimgray;
+  color: #DBDBDB;
+  padding: 1.25rem 2.5rem;
+  border-radius: 4rem;
+  transition: background-color 0.4s;
+
+}
+
+.button:hover {
+  background-color: #706D54;
+}
+
+.info {
+  background: rgb(105,102,79);
+  background: linear-gradient(200deg, rgba(105,102,79,1) 17%, rgba(0,0,0,1) 100%);
+
+  padding: 2rem 1.5rem;
+  border-radius: 2rem;
+}
+
+.info__circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #706D54;
+}
+
+.info__data {
   display: flex;
   justify-content: center;
   align-items: center;
+  column-gap: 0.5rem  ;
 }
 
-.avatar {
-  width: 100%;
-  height: 100%;
-  background: url('/assets/avatar.png') no-repeat center center;
-  background-size: contain;  /* Ensure the gear image fits the container */
-  transform-origin: center center;
-  transform-style: preserve-3d; /* Enable 3D transformations */
+.info__image {
+  background: rgb(105,102,79);
+  background: linear-gradient(200deg, rgba(105,102,79,1) 17%, rgba(0,0,0,1) 100%);
+
+  height: 180px;
+  border-radius: 2rem;
+  display: grid;
+  margin-block: 1.5rem;
+  overflow: hidden;
 }

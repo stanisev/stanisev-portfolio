@@ -1,15 +1,81 @@
-<div class="container">
-  <div class="left-panel">
-    Left Content
-    <div class="avatar-container">
-      <div class="avatar"></div>
-    </div>
-    <div class="gear-container">
-      <div class="gear_1"></div>
-      <div class="gear_2"></div>
-      <div class="gear_3"></div>
-    </div>
+<nav class="nav">
+  <ul class="nav__list">
+    <li>
+      <a href="#home" title="Home" class="nav__link">
+        <i class="ri-home-line"></i>
+      </a>
+    </li>
+    <li>
+      <a href="#projects" title="Projects" class="nav__link">
+        <i class="ri-folder-6-line"></i>
+      </a>
+    </li>
+    <li>
+      <a href="#experience" title="Experience" class="nav__link">
+        <i class="ri-profile-line"></i>
+      </a>
+    </li>
+    <li>
+      <a href="#contact" title="Contact" class="nav__link">
+        <i class="ri-contacts-book-line"></i>
+      </a>
+    </li>
+  </ul>
 
-  </div>
-  <div class="right-panel">Stanisev</div>
-</div>
+
+</nav>
+
+
+<main class="main">
+  <section class="home section" id="home">
+    <div class="home__container container grid">
+      <div class="prefill">
+        <img [src]="'assets/profile_pic.png'" alt="" class="prefill__img">
+
+        <div class="prefill_data">
+          <h1 class="prefill_name">Stefan <br> Stanisev</h1>
+          <div class="prefill_buttons">
+            <a href="#projects" class="button">Projects</a>
+            <a href="#experience" class="button button__black">Experience</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="info">
+        <div class="info__data">
+          <div class="info__circle">
+            <h1 class="info__name">Stefan Stanisev</h1>
+          </div>
+          <div class="info__image">
+            <img [src]="'assets/about_pic.png'" alt="about" class="info__img">
+          </div>
+          <p class="info__description">
+            Master in Computer and Software Engineering with 5+ years of experience in Java. Spring Boot, Angular etc.
+            Passionate about building scalable web applications, optimizing performance, and crafting seamless user experiences.
+            Ready to bring innovative solutions to your team!
+          </p>
+
+          <a href="assets/pdf/stefan-stanisev.pdf" download target="_blank" class="button button__black">Download CV</a>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <section class="projects section" id="projects">
+
+  </section>
+
+  <section class="experience section" id="experience">
+
+  </section>
+
+  <section class="contact section" id="contact">
+
+  </section>
+</main>
+
+<footer class="footer">
+
+</footer>
