@@ -1,7 +1,7 @@
 <nav class="nav">
   <ul class="nav__list">
     <li>
-      <a href="#home" title="Home" class="nav__link">
+      <a href="#home" title="Home" class="nav__link active-link">
         <i class="ri-home-line"></i>
       </a>
     </li>
@@ -43,28 +43,68 @@
 
       <div class="info">
         <div class="info__data">
-          <div class="info__circle">
-            <h1 class="info__name">Stefan Stanisev</h1>
-          </div>
-          <div class="info__image">
-            <img [src]="'assets/about_pic.png'" alt="about" class="info__img">
-          </div>
-          <p class="info__description">
-            Master in Computer and Software Engineering with 5+ years of experience in Java. Spring Boot, Angular etc.
-            Passionate about building scalable web applications, optimizing performance, and crafting seamless user experiences.
-            Ready to bring innovative solutions to your team!
-          </p>
-
-          <a href="assets/pdf/stefan-stanisev.pdf" download target="_blank" class="button button__black">Download CV</a>
+          <div class="info__circle"></div>
+          <h1 class="info__name">Stefan Stanisev</h1>
         </div>
+
+        <div class="info__image">
+          <img [src]="'assets/about_pic.png'" alt="about" class="info__img">
+        </div>
+        <p class="info__description">
+          Master in Computer and Software Engineering with 5+ years of experience in Java. Spring Boot, Angular etc.
+          Passionate about building scalable web applications, optimizing performance, and crafting seamless user experiences.
+          Ready to bring innovative solutions to your team!
+        </p>
+
+        <div class="info__social">
+          <a href="https://bg.linkedin.com/in/stefan-stanishev-737335180" target="_blank" class="info__link">
+            <i class="ri-linkedin-box-line"></i>
+          </a>
+          <a href="https://github.com/stanisev" target="_blank" class="info__link">
+            <i class="ri-github-line"></i>
+          </a>
+          <a href="https://www.instagram.com/sstanisev/#" target="_blank" class="info__link">
+            <i class="ri-instagram-line"></i>
+          </a>
+        </div>
+
+        <a href="assets/pdf/stefan-stanisev-cv.pdf" target="_blank" class="button button__black button__cv">Download CV</a>
       </div>
 
-
+      <div class="skills">
+        <h2 class="skills__title">Skills</h2>
+        <div class="skills_items">
+          <img [src]="'assets/img/java.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/spring.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/spring-boot.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/angular.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/skills-html.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/skills-css.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/skills-javascript.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/docker.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/kubernetes.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/aws.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/terraform.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/kafka.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/postgres.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/sql.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/firebase.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/dynamodb.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/skills-git.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/skills-github.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/skills-photoshop.svg'" alt="skill" class="skills__item">
+        </div>
+        <p class="skills_description">
+          Explore the projects section to see my work with these tech stacks.
+        </p>
+      </div>
     </div>
   </section>
 
   <section class="projects section" id="projects">
+    <div class="project__container">
 
+    </div>
   </section>
 
   <section class="experience section" id="experience">
@@ -77,5 +117,42 @@
 </main>
 
 <footer class="footer">
+  <div class="footer__container container grid">
+    <div class="footer__content grid">
+      <a href="#" class="footer__logo">Stanisev</a>
+      <ul class="footer__links">
+        <li>
+          <a href="#home" class="footer__link">Home</a>
+        </li>
+        <li>
+          <a href="#projects" class="footer__link">Projects</a>
+        </li>
+        <li>
+          <a href="#experience" class="footer__link">Experience</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer__socials">
+      <a href="https://bg.linkedin.com/in/stefan-stanishev-737335180" target="_blank" class="footer__socials__link">
+        <i class="ri-linkedin-box-line"></i>
+      </a>
+      <a href="https://github.com/stanisev" target="_blank" class="footer__socials__link">
+        <i class="ri-github-line"></i>
+      </a>
+      <a href="https://www.instagram.com/sstanisev/#" target="_blank" class="footer__socials__link">
+        <i class="ri-instagram-line"></i>
+      </a>
+    </div>
+
+  </div>
+
+  <span class="footer__copy">
+    &#169; All Rights Reserved by Stanisev
+  </span>
 
 </footer>
+
+<a href="#" class="scrollup" id="scroll-up">
+  <i class="ri-arrow-up-line"></i>
+</a>
