@@ -381,7 +381,7 @@ ul, ol {
     }
   }
 
-@media screen and (min-width: 1360px) {
+@media screen and (min-width: 1430px) {
 
   .nav {
     width: max-content;
@@ -420,7 +420,7 @@ ul, ol {
   }
 
   .home__container {
-    grid-template-columns: 280px 560px;
+    grid-template-columns: 300px 600px;
     align-items: stretch;
   }
 
@@ -441,8 +441,8 @@ ul, ol {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    max-width: 350px;
-    width: 350px;
+    max-width: 450px;
+    width: 400px;
   }
 
   .about {
