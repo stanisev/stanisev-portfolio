@@ -1,4 +1,5 @@
-import { Component, HostListener, Renderer2, ElementRef } from '@angular/core';
+import { Component, HostListener, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
+import ScrollReveal from 'scrollreveal';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,7 @@ import { Component, HostListener, Renderer2, ElementRef } from '@angular/core';
   standalone: true,
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   sections: NodeListOf<HTMLElement>;
 
   constructor(private renderer: Renderer2, private el: ElementRef) {
@@ -38,6 +39,25 @@ export class AppComponent {
           this.renderer.removeClass(sectionLink, 'active-link');
         }
       }
+    });
+  }
+
+  ngAfterViewInit() {
+    ScrollReveal().reveal('.prefill', {
+      origin: 'top',
+      distance: '60px',
+      duration: 1000,
+      delay: 200
+    });
+    ScrollReveal().reveal('.info', {
+      distance: '60px',
+      origin: 'rigth',
+      delay: 800
+    });
+    ScrollReveal().reveal('.skills', {
+      origin: 'left',
+      distance: '60px',
+      delay: 1000
     });
   }
 }
