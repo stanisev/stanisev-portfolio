@@ -93,6 +93,7 @@
           <img [src]="'assets/img/skills-git.svg'" alt="skill" class="skills__item">
           <img [src]="'assets/img/skills-github.svg'" alt="skill" class="skills__item">
           <img [src]="'assets/img/skills-photoshop.svg'" alt="skill" class="skills__item">
+          <img [src]="'https://jmeter.apache.org/images/jmeter_square.svg'" alt="skill" class="projects__skill">
         </div>
         <p class="skills_description">
           Explore the projects section to see my work with these tech stacks.
@@ -102,9 +103,71 @@
   </section>
 
   <section class="projects section" id="projects">
-    <div class="project__container">
+    <h2 class="section__title">Recent Projects</h2>
 
+    <div class="projects__sec">
+      <div class="projects__container container grid">
+        <article class="projects__card">
+          <a href="#" target="_blank" class="projects__image">
+            <img src="../assets/img/projects/project__1.png" alt="Project 1" class="projects__img">
+          </a>
+          <div class="projects__data">
+            <h3 class="projects__name">Easy Invoicer</h3>
+            <p class="projects__description">
+              Easy Invoicer is a simple and efficient invoicing app designed to help businesses manage clients,
+              track services, and generate professional invoices effortlessly. With support for IndexedDB storage,
+              it ensures seamless offline functionality while offering a user-friendly interface for quick invoice
+              creation and client management.</p>
+
+            <div class="projects__skills">
+              <img [src]="'assets/img/angular.svg'" alt="skill" class="projects__skill">
+              <img [src]="'assets/img/clar.png'" alt="skill" class="projects__skill">
+              <img [src]="'assets/img/inx.png'" alt="skill" class="projects__skill">
+            </div>
+
+            <a href="https://easyinvoicer.netlify.app/invoices" target="_blank" class="projects__button">
+              <i class="ri-link"></i>
+              <span>Visit Project</span>
+            </a>
+          </div>
+        </article>
+      </div>
+      <div class="projects__container container grid">
+        <article class="projects__card">
+          <a href="#" target="_blank" class="projects__image">
+            <img src="assets/img/projects/project__2.png" alt="Project 1" class="projects__img">
+          </a>
+          <div class="projects__data">
+            <h3 class="projects__name">NFTmium</h3>
+            <p class="projects__description">
+              NFTIMIUM is a powerful NFT generator that leverages Angular for the frontend and Spring Boot for the backend.
+              It allows users to upload images and generate multiple NFT variants with customizable traits.
+              Designed for efficiency and scalability, NFTIMIUM streamlines the creation process,
+              making it easy to produce unique digital assets for the blockchain ecosystem.
+            </p>
+
+            <div class="projects__skills">
+              <img [src]="'assets/img/angular.svg'" alt="skill" class="projects__skill">
+              <img [src]="'assets/img/java.svg'" alt="skill" class="projects__skill">
+              <img [src]="'assets/img/spring-boot.svg'" alt="skill" class="projects__skill">
+              <img [src]="'assets/img/sql.svg'" alt="skill" class="projects__skill">
+              <img [src]="'https://icon.icepanel.io/Technology/svg/JUnit.svg'" alt="skill" class="projects__skill">
+            </div>
+
+            <a href="https://github.com/stanisev/nft-generator-be" target="_blank" class="projects__button">
+              <i class="ri-github-line"></i>
+              <span>Visit Project</span>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=0Zi0DtKpgKo" target="_blank" class="projects__button">
+              <i class="ri-youtube-line"></i>
+              <span>Watch Demo</span>
+            </a>
+          </div>
+        </article>
+      </div>
     </div>
+
   </section>
 
   <section class="experience section" id="experience">
