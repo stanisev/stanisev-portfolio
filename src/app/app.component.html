@@ -15,11 +15,11 @@
         <i class="ri-profile-line"></i>
       </a>
     </li>
-    <li>
-      <a href="#contact" title="Contact" class="nav__link">
-        <i class="ri-contacts-book-line"></i>
-      </a>
-    </li>
+<!--    <li>-->
+<!--      <a href="#contact" title="Contact" class="nav__link">-->
+<!--        <i class="ri-contacts-book-line"></i>-->
+<!--      </a>-->
+<!--    </li>-->
   </ul>
 
 
@@ -170,8 +170,100 @@
 
   </section>
 
-  <section class="experience section" id="experience">
+  <section class="section experience" id="experience">
+    <div class="skills">
+      <h2 class="skills__title">Experience</h2>
 
+      <div class="skills_items">
+        <div class="experience__card">
+          <h3 class="experience__title">Software Engineer II</h3>
+          <div class="skills_items">
+            <img [src]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNScSVTcbevtYcYMN0aCZUZSkbWHdopaKAPQ&s'" alt="skill" class="skills__item">
+            <p class="experience__company__name">Paysafe</p>
+          </div>
+          <p class="experience__date">Feb 2024 - Present</p>
+          <p class="experience__description">
+            As a Software Engineer II at Paysafe, I initially created a Config Service for the entire system, utilizing DynamoDB for efficient configuration management. I also enhanced the UI for managing configurations, improving accessibility and ease of use for internal teams. Additionally, I mentored junior colleagues and led onboarding sessions, sharing best practices and technical insights.
+
+            I worked on performance testing for critical transaction microservices, writing comprehensive tests using JMeter and analyzing the results to identify performance bottlenecks. To support ongoing monitoring, I developed a custom application for visualizing JMeter results and created an app using Puppeteer for capturing screenshots and automating workflows.
+
+            I also integrated performance metrics with Grafana and Jaeger for enhanced observability and real-time monitoring. As part of an ongoing effort to improve system reliability and scalability, I contributed to the development of a new performance testing suite. I played a key role in planning and executing the migration to Reactive Spring and R2DBC, which set the stage for improved asynchronous data handling and scalability. This role allowed me to strengthen my skills in performance engineering, mentoring, and architecting modern, reactive systems.
+          </p>
+        </div>
+        <div class="skills_items">
+          <p class="experience__company__name">Tech Stack:</p>
+          <img [src]="'assets/img/java.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/spring-boot.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/angular.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/postgres.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/aws.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/dynamodb.svg'" alt="skill" class="skills__item">
+        </div>
+
+        <div class="experience__card">
+          <h3 class="experience__title">Software Engineer I</h3>
+          <div class="skills_items">
+            <img [src]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNScSVTcbevtYcYMN0aCZUZSkbWHdopaKAPQ&s'" alt="skill" class="skills__item">
+            <p class="experience__company__name">Paysafe</p>
+          </div>
+          <p class="experience__date">Nov 2022 - Feb 2024</p>
+          <p class="experience__description">
+            As a Software Engineer I at Paysafe, I contributed to several key projects aimed at improving system
+            architecture and scalability. I worked on optimizing user onboarding and registration processes, which
+            significantly enhanced the user experience. I played a key role in the migration and decomposition of a
+            large monolithic application into a modular microservices architecture, improving both flexibility and
+            maintainability. Additionally, I integrated the Flowable BPMN Engine to automate business processes,
+            streamlining workflows across the platform. Using Spring, Redis, and Kafka, I helped build highly scalable,
+            reliable, and fault-tolerant systems capable of supporting growing transaction volumes.
+          </p>
+          <div class="skills_items">
+            <p class="experience__company__name">Tech Stack:</p>
+            <img [src]="'assets/img/java.svg'" alt="skill" class="skills__item">
+            <img [src]="'assets/img/spring-boot.svg'" alt="skill" class="skills__item">
+            <img [src]="'assets/img/angular.svg'" alt="skill" class="skills__item">
+            <img [src]="'assets/img/docker.svg'" alt="skill" class="skills__item">
+            <img [src]="'assets/img/kafka.svg'" alt="skill" class="skills__item">
+            <img [src]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS0K1pid1KZGG8O7heTiW4Hsck66g3Nsc0qg&s'" alt="skill" class="skills__item">
+          </div>
+        </div>
+
+        <div class="experience__card">
+          <h3 class="experience__title">Junior Software Engineer</h3>
+          <div class="skills_items">
+            <img [src]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNScSVTcbevtYcYMN0aCZUZSkbWHdopaKAPQ&s'" alt="skill" class="skills__item">
+            <p class="experience__company__name">Paysafe</p>
+          </div>
+          <p class="experience__date">Jan 2021 - Nov 2022</p>
+          <p class="experience__description">
+            Worked on payment solutions and integrations for Skrill and Neteller, part of Paysafe’s digital wallet.
+            Contributed to UI/UX improvements, developed microservices, and enhanced platform functionality.
+          </p>
+          <div class="skills_items">
+            <p class="experience__company__name">Tech Stack:</p>
+            <img [src]="'assets/img/angular.svg'" alt="skill" class="skills__item">
+            <img [src]="'assets/img/skills-html.svg'" alt="skill" class="skills__item">
+            <img [src]="'assets/img/skills-css.svg'" alt="skill" class="skills__item">
+            <img [src]="'assets/img/java.svg'" alt="skill" class="skills__item">
+            <img [src]="'assets/img/spring-boot.svg'" alt="skill" class="skills__item">
+            <img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1667px-Figma-logo.svg.png'" alt="skill" class="skills__item">
+            <img [src]="'https://m.media-amazon.com/images/I/41QodfboFdL.png'" alt="skill" class="skills__item">
+          </div>
+        </div>
+
+        <div class="experience__card">
+          <h3 class="experience__title">Summer Internship</h3>
+          <div class="skills_items">
+            <img [src]="'https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg/sap-logo-svg.svg'" alt="skill" class="skills__item">
+            <p class="experience__company__name">SAP</p>
+          </div>
+          <p class="experience__date">Summer 2019, 2020</p>
+          <p class="experience__description">
+            Summer Internship at TU-Sofia – Developed a Spring Boot project with mentorship from an SAP expert,
+            focusing on REST API development, MySQL database management, and application security.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="contact section" id="contact">
