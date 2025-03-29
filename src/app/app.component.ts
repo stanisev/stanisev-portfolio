@@ -61,13 +61,13 @@ export class AppComponent implements AfterViewInit {
     });
     ScrollReveal().reveal('.projects', {
       origin: 'top',
-      distance: '30px',
+      distance: '70px',
       delay: 600
     });
     ScrollReveal().reveal('.experience', {
       origin: 'top',
-      distance: '30px',
-      delay: 600
+      distance: '70px',
+      delay: 300
     });
   }
 }
