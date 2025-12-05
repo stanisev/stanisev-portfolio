@@ -490,16 +490,28 @@ html {
 .projects {
   color: #DBDBDB;
   font-size: 1rem;
-  width: 67%;
+  width: 100%;
   margin: auto;
   background: rgba(105,102,79, 1%);
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .projects__sec {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1rem;
-  justify-content: center;
+  width: 100%;
+}
+
+.projects__container {
+  width: 100%;
+}
+
+.projects__data {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .projects__name {
@@ -511,6 +523,7 @@ html {
 .projects__description {
   margin-bottom: 1.5rem;
   text-align: justify;
+  flex: 1;
 }
 
 .projects__card {
@@ -518,8 +531,11 @@ html {
   background: linear-gradient(200deg, rgba(105,102,79, 0.5) 17%, rgba(0,0,0, 0.25) 100%);
   padding: 1.5rem;
   border-radius: 2rem;
-  margin: auto auto 1.5rem;
-  width: 50vh;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .projects__image {
@@ -527,10 +543,14 @@ html {
   overflow: hidden;
   border-radius: 1.5rem;
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 .projects__img {
-  height: 50vh;
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
   transition: transform 0.4s;
 }
 
@@ -613,6 +633,24 @@ html {
   .experience__description {
     display: none;
   }
+
+  .projects {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .projects__card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .projects__img {
+    max-height: 200px;
+  }
+
+  .projects__header-title {
+    font-size: 1.5rem;
+  }
 }
 
 
@@ -628,6 +666,39 @@ html {
 
   .experience__description {
     display: none;
+  }
+
+  .projects {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .projects__card {
+    max-width: 100%;
+    padding: 1.25rem;
+  }
+
+  .projects__img {
+    max-height: 250px;
+  }
+
+  .projects__header-title {
+    font-size: 1.75rem;
+  }
+
+  .projects__container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .projects__container.container {
+    max-width: 100% !important;
+  }
+
+  .projects__container.grid {
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -669,6 +740,33 @@ html {
       margin-top: 5rem;
       grid-column: 1 / -1;
       width: 96%;
+    }
+
+    .projects {
+      width: 67%;
+      padding: 2rem 1.5rem;
+    }
+
+    .projects__sec {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .projects__container {
+      width: calc(50% - 0.5rem);
+      display: flex;
+    }
+
+    .projects__card {
+      width: 100%;
+      margin-bottom: 0;
+      height: 100%;
+    }
+
+    .projects__img {
+      max-height: 400px;
     }
 
     .footer__container,
@@ -753,6 +851,14 @@ html {
     align-items: center;
   }
 
+
+  .projects__sec {
+    gap: 2rem;
+  }
+
+  .projects__container {
+    width: calc(50% - 1rem);
+  }
 
   .footer {
     padding-block: 3rem;
