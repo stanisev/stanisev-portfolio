@@ -1,4 +1,4 @@
-import { Component, HostListener, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, HostListener, Renderer2, ElementRef, AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import ScrollReveal from 'scrollreveal';
 
 @Component({
@@ -7,11 +7,27 @@ import ScrollReveal from 'scrollreveal';
   standalone: true,
   styleUrl: './app.component.css'
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
   sections: NodeListOf<HTMLElement>;
+  private scrollTimeout: any;
+  private isScrolling: boolean = false;
 
   constructor(private renderer: Renderer2, private el: ElementRef) {
     this.sections = this.el.nativeElement.querySelectorAll('section[id]');
+  }
+
+  ngOnInit(): void {
+    // Handle all anchor link clicks for smooth scrolling
+    const allLinks = this.el.nativeElement.querySelectorAll('a[href^="#"]');
+    allLinks.forEach((link: HTMLElement) => {
+      link.addEventListener('click', (e: Event) => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          this.smoothScrollToSection(href.substring(1));
+        }
+      });
+    });
   }
 
   @HostListener('window:scroll', [])
@@ -40,6 +56,80 @@ export class AppComponent implements AfterViewInit {
         }
       }
     });
+
+    // Clear any animation classes after scroll completes
+    clearTimeout(this.scrollTimeout);
+    this.scrollTimeout = setTimeout(() => {
+      this.isScrolling = false;
+      // Clean up any lingering animation classes
+      this.sections.forEach((section) => {
+        this.renderer.removeClass(section, 'section-leave');
+      });
+    }, 300);
+  }
+
+  private smoothScrollToSection(sectionId: string): void {
+    const targetSection = document.getElementById(sectionId);
+    if (!targetSection) return;
+
+    this.isScrolling = true;
+    const currentSection = this.getCurrentSection();
+    
+    // Remove any existing animation classes
+    this.sections.forEach((section) => {
+      this.renderer.removeClass(section, 'section-enter');
+      this.renderer.removeClass(section, 'section-leave');
+    });
+    
+    // Fade out current section if different
+    if (currentSection && currentSection.id !== sectionId) {
+      this.renderer.addClass(currentSection, 'section-leave');
+    }
+
+    // Calculate offset position (accounting for fixed nav)
+    const offsetTop = targetSection.offsetTop - 58;
+    
+    // Remove leave animation from target before scrolling
+    this.renderer.removeClass(targetSection, 'section-leave');
+    
+    // Smooth scroll
+    window.scrollTo({
+      top: offsetTop,
+      behavior: 'smooth'
+    });
+
+    // Fade in target section after scroll starts
+    setTimeout(() => {
+      this.renderer.addClass(targetSection, 'section-enter');
+      
+      // Clean up animation classes after animation completes
+      setTimeout(() => {
+        this.renderer.removeClass(targetSection, 'section-enter');
+        if (currentSection) {
+          this.renderer.removeClass(currentSection, 'section-leave');
+        }
+      }, 600);
+    }, 100);
+  }
+
+  private getCurrentSection(): HTMLElement | null {
+    const scrollPosition = window.scrollY + 100;
+    let currentSection: HTMLElement | null = null;
+
+    this.sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      
+      if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+        currentSection = section;
+      }
+    });
+
+    return currentSection;
+  }
+
+  ngOnDestroy(): void {
+    clearTimeout(this.scrollTimeout);
   }
 
   ngAfterViewInit() {

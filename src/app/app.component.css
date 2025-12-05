@@ -2,6 +2,61 @@ ul, ol {
   list-style: none;
 }
 
+/* Section transition animations */
+.section {
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Fade in animation when section becomes active */
+.section.section-enter {
+  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Fade out animation when leaving section */
+.section.section-leave {
+  animation: fadeOutUp 0.4s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0.5;
+    transform: translateY(-15px);
+  }
+}
+
+/* Smooth scroll offset for fixed nav */
+html {
+  scroll-padding-top: 58px;
+}
+
+/* Enhanced scroll behavior */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Prevent animation flash on page load */
+.section {
+  opacity: 1;
+}
+
 .nav {
   position: fixed;
   bottom: 1.5rem;
@@ -35,7 +90,12 @@ ul, ol {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  transition: background-color 0.6s;
+  transition: background-color 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav__link:hover {
+  transform: scale(1.1);
 }
 
 .prefill {
@@ -187,6 +247,7 @@ ul, ol {
 
 .skills__item {
   width: 2rem;
+  flex-shrink: 0;
   transition: transform 0.3s;
 }
 
@@ -194,12 +255,41 @@ ul, ol {
   transform: translateY(-0.25rem);
 }
 
-.skills_items {
+/* Infinite scroll container */
+.skills_scroll_container {
+  overflow: hidden;
+  width: 100%;
+  margin-block: 1.5rem;
+  position: relative;
+  mask: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+/* Only apply animation to skills items inside scroll container */
+.skills_scroll_container .skills_items {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   gap: 1.5rem;
-  margin-block: 1.5rem;
+  width: fit-content;
+  animation: scroll-left 40s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  flex-wrap: nowrap;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover for better UX */
+.skills_scroll_container:hover .skills_items {
+  animation-play-state: paused;
 }
 
 .skills_description {
@@ -338,16 +428,20 @@ ul, ol {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   z-index: 99999;
-  transition: bottom 0.4s, transform 0.4s;
+  transition: bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
 }
 
 .scrollup:hover {
-  transform: translateY(-0.5rem);
+  transform: translateY(-0.5rem) scale(1.1);
 }
 
 .show-scroll {
   right: 46%;
   bottom: 8rem;
+  opacity: 1;
 }
 
 /* Active Links */
@@ -362,6 +456,35 @@ ul, ol {
 .section__title {
   margin-top: 0;
   margin-bottom: 2rem;
+}
+
+.projects__header {
+  margin-bottom: 2rem;
+}
+
+.projects__header-title {
+  color: #DBDBDB;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.projects__header-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #DBDBDB;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.projects__header-link:hover {
+  color: #706D54;
+  transform: translateY(-2px);
+}
+
+.projects__header-link i {
+  font-size: 1.5rem;
 }
 
 .projects {

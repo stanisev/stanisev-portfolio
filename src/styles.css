@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   margin: 0.5rem;
   padding: 0.75rem;
