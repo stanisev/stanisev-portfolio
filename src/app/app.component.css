@@ -575,6 +575,14 @@ html {
   margin-bottom: 1.5rem;
 }
 
+.projects__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+}
+
 .projects__button {
   color: #DBDBDB;
   display: inline-flex;
@@ -582,7 +590,6 @@ html {
   column-gap: 0.5rem;
   transition: color 0.5s;
   text-decoration: none;
-  margin-right: 1rem;
 }
 
 .projects__button:hover {
