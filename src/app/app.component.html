@@ -30,10 +30,10 @@
   <section class="home section" id="home">
     <div class="home__container container grid">
       <div class="prefill">
-        <img [src]="'assets/profile_pic.png'" alt="" class="prefill__img">
+        <img [src]="'assets/profile_pic_2.png'" alt="" class="prefill__img">
 
         <div class="prefill_data">
-          <h1 class="prefill_name">Stefan <br> Stanisev</h1>
+          <h1 class="prefill_name">Stefan <br> Stanishev</h1>
           <div class="prefill_buttons">
             <a href="#projects" class="button">Projects</a>
             <a href="#experience" class="button button__black">Experience</a>
@@ -44,11 +44,11 @@
       <div class="info">
         <div class="info__data">
           <div class="info__circle"></div>
-          <h1 class="info__name">Stefan Stanisev</h1>
+          <h1 class="info__name">Stefan Stanishev</h1>
         </div>
 
         <div class="info__image">
-          <img [src]="'assets/about_pic.png'" alt="about" class="info__img">
+          <img [src]="'assets/about_pic_2.png'" alt="about" class="info__img">
         </div>
         <p class="info__description">
           Master in Computer and Software Engineering with 5+ years of experience in Java. Spring Boot, Angular etc.
@@ -176,12 +176,39 @@
 
       <div class="skills_items">
         <div class="experience__card">
+          <h3 class="experience__title">Software Engineer</h3>
+          <div class="skills_items">
+            <img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/CTERA_Networks_logo.svg/1200px-CTERA_Networks_logo.svg.png'" alt="ctera" class="skills__item">
+            <img [src]="'https://logosandtypes.com/wp-content/uploads/2023/11/ciklum.png'" alt="ciklum" class="skills__item">
+            <p class="experience__company__name">Ctera (via Ciklum)</p>
+          </div>
+          <p class="experience__date">May 2025 - Present</p>
+          <p class="experience__description">
+            As a Software Engineer at Ctera (via Ciklum), I worked on  Modernized a legacy Java monolith built on Servlets and XML-based configuration, including significant work on the dashboard backend (powering system-wide KPIs, server activity, and storage metrics) and share-management endpoints responsible for creating, updating, validating, and exposing file-share metadata. Refactored outdated components into clean, maintainable Spring Boot–based REST services.
+            <br><br>Debugged and optimized the platform's request-handling pipeline, working deeply with Catalina and Coyote logs to identify performance bottlenecks and improve throughput and reliability.
+            <br><br>Led modernization of the logging and monitoring stack, integrating and optimizing EKL/ELK pipelines (Elasticsearch, Kibana, Logstash) to improve observability, centralized log tracing, and faster root-cause analysis.
+            <br><br>Performed in-depth performance profiling and optimization, analyzing JVM behavior, memory usage, SQL performance, and service-level bottlenecks to improve stability and reduce request latency across critical services.
+            <br><br>Developed and enhanced KPI calculation services, including device and storage KPIs, ensuring accurate aggregation and consistent reporting across multiple time periods.
+            <br><br>Designed and implemented time-based aggregation for server activity, enabling hourly, daily, and weekly summaries of 5-minute server activity data for improved analytics workflows.
+          </p>
+        </div>
+        <div class="skills_items">
+          <p class="experience__company__name">Tech Stack:</p>
+          <img [src]="'assets/img/java.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/spring-boot.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/react.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/postgres.svg'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/vsphere.webp'" alt="skill" class="skills__item">
+          <img [src]="'assets/img/nomad.svg'" alt="skill" class="skills__item">
+        </div>
+
+        <div class="experience__card">
           <h3 class="experience__title">Software Engineer II</h3>
           <div class="skills_items">
             <img [src]="'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNScSVTcbevtYcYMN0aCZUZSkbWHdopaKAPQ&s'" alt="skill" class="skills__item">
             <p class="experience__company__name">Paysafe</p>
           </div>
-          <p class="experience__date">Feb 2024 - Present</p>
+          <p class="experience__date">Feb 2024 - May 2025</p>
           <p class="experience__description">
             As a Software Engineer II at Paysafe, I worked on a Config Service for the entire system, utilizing DynamoDB for efficient configuration management. I also enhanced the UI for managing configurations, improving accessibility and ease of use for internal teams. Additionally, I mentored junior colleagues and led onboarding sessions, sharing best practices and technical insights.
 
