@@ -335,6 +335,14 @@ html {
   color: #DBDBDB;
 }
 
+.experience__description--mobile {
+  display: none;
+  font-size: 1rem;
+  color: #DBDBDB;
+  text-align: justify;
+  margin-top: 1rem;
+}
+
 /* Footer */
 .footer {
   padding-block: 2rem 8rem;
@@ -641,6 +649,10 @@ html {
     display: none;
   }
 
+  .experience__description--mobile {
+    display: block;
+  }
+
   .projects {
     width: 100%;
     padding: 0.5rem;
@@ -673,6 +685,10 @@ html {
 
   .experience__description {
     display: none;
+  }
+
+  .experience__description--mobile {
+    display: block;
   }
 
   .projects {
@@ -712,6 +728,10 @@ html {
 
 
   @media screen and (min-width: 768px) {
+    .experience__description--mobile {
+      display: none;
+    }
+
     .home__container {
       display: grid;
       grid-template-columns: repeat(2, 400px);
